@@ -1,0 +1,67 @@
+package aquestao1;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ *
+ * @author Super Maquina
+ */
+public class AQuestao1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        int num[]= new int[3];
+        System.out.print("numeros desordenados{");
+        for (int valor=0; valor<num.length; valor++) {
+            num[valor]=(int) ((int) 0+Math.random()*(10-1));
+            System.out.print(num[valor]+", ");
+        }
+        System.out.println("}");
+        
+        Arrays.sort(num);
+            
+                System.out.print("numeros ordenados {");
+                for (int valor=0; valor<num.length; valor++){
+                    System.out.print(num[valor]+", ");
+                }
+                System.out.println("}");
+                System.out.println("menor numero eh: "+num[0]+ ". e o maior eh: "+ num[2]+". ");
+                    
+                    List som= new ArrayList();
+                    
+                    for (int i=0;i<num.length;i++){
+                        for (int g=0; g<num.length;g++){
+                            if(som.contains(num[i]+num[g])== false && i!=g){
+                                System.out.println(num[i]+"+"+num[g]);
+                                System.out.println(num[i]+num[g]);
+                                int h = num[i]+ num[g];
+                                som.add(h);
+                                /*nesse cod fiz com que a soma acontecesse (sem repetir nenhuma ja feita)
+                                A partir dos numeros de num[]. se forem 3 numeros, 3 somas diferentes entre eles.
+                                .conteins é retorna valor True ou False (verdadeiro ou falso, respectivamente) para dado elemento especificado presente ou não em uma dada lista*/
+                            }
+                        }
+                    }    
+                    System.out.println(som);
+                    for (int j=0; j<som.size();j++){
+                        double raiz= Math.sqrt(som.get(j).hashCode());
+                            if (raiz-(int)raiz==0){
+                                System.out.println("a raiz quadrada de: "+ som.get(j)+" eh: "+ raiz);
+                            } else{
+                                System.out.println("nenhuma soma, gera raiz quadrada");
+                            }
+                    }
+                   /*raizes quadraticas dos numeros da lista "som",
+                    onde contem as somas dos numeros de "num".
+                    uso do som.get realiza uma busca por um dado elemento em uma posição específica de uma lista;
+                    .hascode retorna o valor do Hash de uma lista específica;
+                    */
+}
+}
+    
+                    
